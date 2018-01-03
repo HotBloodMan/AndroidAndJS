@@ -3,19 +3,14 @@
 <head>
 <title></title>
 <script type="text/javascript">
-    function sum(a,b){
-    return a+b;
-    }
-     function s(){
-    var result =window.android.back();
-    document.getElementById("p").innerHTML=result;
-    }
-
+    // Android需要调用的方法
+   function callJS(){
+      alert("Android调用了JS的callJS方法");
+   }
     </script>
 </head>
 <body>
-<button onclick="s()">调用本地方法</button>
-<a href="file:///android_asset/test1.html">点击</a>
-<p id="p"></p>
+//点击按钮则调用callAndroid函数
+<button type="button" id="button1" onclick="callAndroid()"></button>
 </body>
 </html>
