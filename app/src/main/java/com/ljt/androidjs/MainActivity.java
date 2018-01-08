@@ -1,6 +1,7 @@
 package com.ljt.androidjs;
 
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -26,7 +27,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static final String TAG = "MainActivity";
     private WebView mWebView;
     private Button btn;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mWebView.loadUrl("file:///android_asset/test.html");
 
         /*
-        *   // 由于设置了弹窗检验调用结果,所以需要支持js对话框
+        // 由于设置了弹窗检验调用结果,所以需要支持js对话框
         // webview只是载体，内容的渲染需要使用webviewChromClient类去实现
         // 通过设置WebChromeClient对象处理JavaScript的对话框
         //设置响应js 的Alert()函数
@@ -64,7 +64,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 b.create().show();
                 return true;
             }
-
         });
     }
     //Android调用有返回值js方法
