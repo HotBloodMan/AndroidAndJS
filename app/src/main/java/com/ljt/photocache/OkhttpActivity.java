@@ -5,6 +5,7 @@ import android.net.ConnectivityManager;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.ljt.androidjs.R;
 
@@ -110,6 +111,32 @@ public class OkhttpActivity extends Activity {
            }
             return response;
         }
+    }
+    
+    
+    
+    public void getResponse() {
+        try {
+            String url = "https://api.github.com/";
+            OkHttpClient client = new OkHttpClient();
+            Request request = new Request.Builder().url(url).build();
+            client.newCall(request).enqueue(new Callback() {
+                @Override
+                public void onFailure(Call call, IOException e) {
+                }
+
+                @Override
+                public void onResponse(Call call, Response response) throws IOException {
+
+                }
+            });
+        }finally {
+            
+        }
+    }
+
+    private void parseString(String string) {
+        
     }
 
     public void Cache2(){
